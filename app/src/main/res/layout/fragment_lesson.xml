@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:singleLine="false"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="The Key To Success In iPhone Photography." />
+
+        <ImageView
+            android:id="@+id/iv_thumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="16dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/thubnail"
+            app:layout_constraintDimensionRatio="4:3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+        <View
+            android:id="@+id/bg_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:alpha="0.5"
+            android:background="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/iv_thumbnail"
+            app:layout_constraintEnd_toEndOf="@id/iv_thumbnail"
+            app:layout_constraintStart_toStartOf="@id/iv_thumbnail"
+            app:layout_constraintTop_toTopOf="@id/iv_thumbnail" />
+
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="16dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_thumbnail"
+            tools:text="What’s the secret to taking truly incredible iPhone photos? Learning how to use your iPhone camera is very important, but there’s something even more fundamental to iPhone photography that will help you take the photos of your dreams! Watch this video to learn some unique photography techniques and to discover your own key to success in iPhone photography!" />
+
+        <ImageView
+            android:id="@+id/ic_youtube"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/ic_youtube"
+            app:layout_constraintBottom_toBottomOf="@id/iv_thumbnail"
+            app:layout_constraintEnd_toEndOf="@id/iv_thumbnail"
+            app:layout_constraintStart_toStartOf="@id/iv_thumbnail"
+            app:layout_constraintTop_toTopOf="@id/iv_thumbnail" />
+
+        <ImageView
+            android:id="@+id/iv_locked"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/ic_locked"
+            app:layout_constraintBottom_toBottomOf="@id/iv_thumbnail"
+            app:layout_constraintEnd_toEndOf="@id/iv_thumbnail"
+            app:layout_constraintStart_toStartOf="@id/iv_thumbnail"
+            app:layout_constraintTop_toTopOf="@id/iv_thumbnail" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
