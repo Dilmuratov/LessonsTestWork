@@ -17,7 +17,6 @@ import android.widget.ProgressBar
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.lessons.R
-import com.example.lessons.app.App
 import com.example.lessons.databinding.FragmentVideoPlayerBinding
 import com.example.lessons.utils.gone
 import com.example.lessons.utils.invisible

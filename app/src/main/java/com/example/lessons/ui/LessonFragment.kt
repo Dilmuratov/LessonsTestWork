@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.lessons.R
 import com.example.lessons.databinding.FragmentLessonBinding
+import com.example.lessons.data.local.LocalStorage
 import com.example.lessons.utils.gone
 import com.example.lessons.utils.set
 import com.example.lessons.utils.visible
@@ -59,6 +60,7 @@ class LessonFragment : Fragment(R.layout.fragment_lesson) {
         val tvOk: AppCompatTextView = dialog.findViewById(R.id.tv_ok)
 
         tvBuy.setOnClickListener {
+            LocalStorage.pref.edit().putBoolean("isActive", true).apply()
             dialog.dismiss()
         }
 
@@ -70,14 +72,21 @@ class LessonFragment : Fragment(R.layout.fragment_lesson) {
     }
 
     private fun initObservers() {
-        if (positionInAdapter in 0..2) {
+        if (LocalStorage.pref.getBoolean("isActive", false)) {
             binding.icYoutube.visible()
             binding.ivLocked.gone()
             binding.bgView.gone()
+
         } else {
-            binding.icYoutube.gone()
-            binding.ivLocked.visible()
-            binding.bgView.visible()
+            if (positionInAdapter in 0..2) {
+                binding.icYoutube.visible()
+                binding.ivLocked.gone()
+                binding.bgView.gone()
+            } else {
+                binding.icYoutube.gone()
+                binding.ivLocked.visible()
+                binding.bgView.visible()
+            }
         }
     }
 

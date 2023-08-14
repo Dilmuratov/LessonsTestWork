@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.lessons.R
 import com.example.lessons.data.models.Lesson
 import com.example.lessons.databinding.ItemLessonBinding
+import com.example.lessons.data.local.LocalStorage
 import com.example.lessons.utils.set
 
 class LessonAdapter : ListAdapter<Lesson, LessonAdapter.LessonViewHolder>(
@@ -27,7 +28,9 @@ class LessonAdapter : ListAdapter<Lesson, LessonAdapter.LessonViewHolder>(
             binding.tvName.text = lesson.name
             binding.tvDescription.text = lesson.description
 
-            if (position <= 2) {
+            if (LocalStorage.pref.getBoolean("isActive", false)) {
+                binding.bgView.setBackgroundResource(R.color.active)
+            } else if (position in 0..2) {
                 binding.bgView.setBackgroundResource(R.color.active)
             } else binding.bgView.setBackgroundResource(R.color.passive)
 
